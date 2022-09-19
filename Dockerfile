@@ -40,10 +40,10 @@ RUN apt-get update && apt-get install -y \
     xdg-utils
 
 COPY package.json package-lock.json /usr/src/app/
+WORKDIR /usr/src/app
 RUN npm install
 
 COPY . /usr/src/app
-WORKDIR /usr/src/app
 
 EXPOSE 9191
 
