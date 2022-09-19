@@ -1,0 +1,16 @@
+{
+  "name": "epitools",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@epitech.js/puppeteer-auth-provider": "^0.1.0",
+    "epitech.js": "^0.2.4",
+    "express": "^4.18.1"
+  }
+}
