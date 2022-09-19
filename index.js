@@ -17,6 +17,23 @@ app.get("/calendar", async function(req, res) {
     const stream = await intra.getCalendarFile({
         locations: ['FR/RUN', 'FR'],
         semesters: [0, 5, 6],
+        onlyMyEvent: false,
+        onlyMyPromo: true,
+        onlyMyModule: true
+    });
+    
+    res.setHeader('Content-Type', 'text/calendar');
+    res.setHeader('Content-Disposition', 'attachment; filename="calendar.ics"');
+    stream.pipe(res);
+
+});
+
+
+app.get("/calendar/registered", async function(req, res) {
+
+    const stream = await intra.getCalendarFile({
+        locations: ['FR/RUN', 'FR'],
+        semesters: [0, 5, 6],
         onlyMyEvent: true,
         onlyMyPromo: true,
         onlyMyModule: true
